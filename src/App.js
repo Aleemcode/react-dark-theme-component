@@ -11,9 +11,10 @@ function App() {
       <div className="hero">
         <header className="hero-header">
         <Switch>
+                <Route exact path='/' component={FullCard} />
                 <Route exact path='/full' component={FullCard} />
-                <Route path='/compact' component={CompactCard} />
-                <Route path='/mini' component={MiniCard} />
+                <Route exact path='/compact' component={CompactCard} />
+                <Route exact path='/mini' component={MiniCard} />
         </Switch>
         </header>
       </div>

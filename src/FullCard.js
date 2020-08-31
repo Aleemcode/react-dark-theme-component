@@ -1,30 +1,15 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './App.scss';
+import {connect} from 'react-redux';
+import * as actions from "./action";
 
 class FullCard extends Component  {
 
-  // state
-  state = {
-    theme: 'light'
-  }
-  lightTheme = () => {
-    // Logic
-    this.setState({
-      theme: 'light'
-    })
-  }
-
-  darkTheme = () => {
-    // Logic
-    this.setState({
-      theme: 'dark'
-    })
-  }
 
   render() {
     return (
-      <div  className={`card1 ${this.state.theme}`}>
+      <div  className={`card1 ${this.props.theme}`}>
         <div className="card1-header">
           <p className="title-dark">POS FAILURE RATE</p>
           <div className="card1-icon">
@@ -41,10 +26,10 @@ class FullCard extends Component  {
 
 
 
-          <svg onClick={this.darkTheme} className="icon-light" width="15" height="15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg onClick={() => this.props.onChangeTheme('dark')} className="icon-light" width="15" height="15" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M11.9262 10.1125c-1.143-.0002-2.27007-.26838-3.29074-.78291-1.02067-.51453-1.90653-1.26111-2.58654-2.17986-.68-.91875-1.1352-1.98409-1.32909-3.11055-.19389-1.12646-.12107-2.28268.21263-3.375911C3.82483 1.17381 2.86255 1.95339 2.1333 2.93099 1.40405 3.90859.931012 5.05312.757279 6.26032.583547 7.46751.714645 8.69899 1.13863 9.84256c.42398 1.14354 1.12738 2.16284 2.04609 2.96504.91872.8021 2.02355 1.3617 3.21384 1.6276 1.19029.2659 2.4282.2297 3.60094-.1052 1.1727-.3349 2.243-.9579 3.1134-1.8124.8703-.8544 1.513-1.913 1.8696-3.07933-.9577.44407-2.0007.67413-3.0563.67423z" fill="#666"/>
           </svg>
-          <svg onClick={this.lightTheme} className="icon-dark" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg onClick={() => this.props.onChangeTheme('light')} className="icon-dark" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M9.00073 12.375c1.86397 0 3.37497-1.511 3.37497-3.375 0-1.86396-1.511-3.375-3.37497-3.375-1.86396 0-3.375 1.51104-3.375 3.375 0 1.864 1.51104 3.375 3.375 3.375z" fill="#fff"/>
             <path d="M9.00073 1.125v2.25m0 11.25v2.25M16.8757 9h-2.25M3.37573 9h-2.25M14.5688 3.432L12.978 5.02275M5.02276 12.978l-1.59075 1.5907m11.13679 0L12.978 12.978M5.02276 5.02275L3.43201 3.432" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
@@ -100,5 +85,16 @@ class FullCard extends Component  {
 
 }
 
+const mapStateToProps = state => {
+  return {
+    theme: state.theme
+  }
+}
 
-export default FullCard;
+const mapDispatcherToProps = dispatcher => {
+  return {
+    onChangeTheme: (theme) => dispatcher(actions.themeUpdated(theme)),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatcherToProps)(FullCard);
