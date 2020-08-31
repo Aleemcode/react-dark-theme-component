@@ -1,15 +1,24 @@
 import React from 'react';
-// import logo from './logo.svg';
+import { BrowserRouter, Router, Switch, Route, Link } from 'react-router-dom';
 import './App.scss';
-import SmallCard from './SmallCard';
+import FullCard from './FullCard';
+import MiniCard from './MiniCard';
+import CompactCard from './CompactCard';
 
 function App() {
   return (
-    <div className="hero">
-      <header className="hero-header">
-      <SmallCard />
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="hero">
+        <header className="hero-header">
+        <Switch>
+                <Route exact path='/full' component={FullCard} />
+                <Route path='/compact' component={CompactCard} />
+                <Route path='/mini' component={MiniCard} />
+        </Switch>
+        </header>
+      </div>
+    </BrowserRouter>
+
   );
 }
 
