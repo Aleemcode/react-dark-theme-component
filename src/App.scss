@@ -48,7 +48,11 @@ $dark-text-color: #939496;
     margin-left: 7px;
   }
 
-  a {
+  .btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
     text-decoration: none;
     flex-basis: 33.3%;
     font-family: 'Avenir', sans-serif;
@@ -61,20 +65,20 @@ $dark-text-color: #939496;
     text-align: center;
     color: #9BA1B5;
   }
-  a:last-child {
+  .btn:last-child {
     border-right: none;
   }
-  a:first-child:hover {
+  .btn:first-child:hover {
     background: $light-hover-state;
     color: $light-active-color;
     border-radius: 0px 0px 0px 5px;
   }
-  a:last-child:hover {
+  .btn:last-child:hover {
     background: $light-hover-state;
     color: $light-active-color;
     border-radius: 0px 0px 5px 0px;
   }
-  a:hover {
+  .btn:hover {
     background: $light-hover-state;
     color: $light-active-color;
   }
@@ -112,7 +116,11 @@ $dark-text-color: #939496;
     margin-left: 7px;
   }
 
-  a {
+  .btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
     text-decoration: none;
     flex-basis: 33.3%;
     font-family: 'Avenir', sans-serif;
@@ -125,20 +133,20 @@ $dark-text-color: #939496;
     text-align: center;
     color: #9BA1B5;
   }
-  a:last-child {
+  .btn:last-child {
     border-right: none;
   }
-  a:first-child:hover {
+  .btn:first-child:hover {
     background: $dark-hover-state;
     color: $dark-active-color;
     border-radius: 0px 0px 0px 5px;
   }
-  a:last-child:hover {
+  .btn:last-child:hover {
     background: $dark-hover-state;
     color: $dark-active-color;
     border-radius: 0px 0px 5px 0px;
   }
-  a:hover {
+  .btn:hover {
     background: $dark-hover-state;
     color: $dark-active-color;
   }

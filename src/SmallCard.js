@@ -58,11 +58,11 @@ class SmallCard extends Component  {
             <rect y="12" width="60" height="4" rx="2" fill="#35BB63"/>
             <g filter="url(#filter0_d)">
             <path d="M58 17C59.6569 17 61 15.6569 61 14C61 12.3431 59.6569 11 58 11C56.3431 11 55 12.3431 55 14C55 15.6569 56.3431 17 58 17Z" fill="white"/>
-            <path d="M58 18.5C60.4853 18.5 62.5 16.4853 62.5 14C62.5 11.5147 60.4853 9.5 58 9.5C55.5147 9.5 53.5 11.5147 53.5 14C53.5 16.4853 55.5147 18.5 58 18.5Z" stroke="#35BB63" stroke-width="3"/>
+            <path d="M58 18.5C60.4853 18.5 62.5 16.4853 62.5 14C62.5 11.5147 60.4853 9.5 58 9.5C55.5147 9.5 53.5 11.5147 53.5 14C53.5 16.4853 55.5147 18.5 58 18.5Z" stroke="#35BB63" strokeWidth="3"/>
             </g>
             <defs>
-            <filter id="filter0_d" x="42" y="0" width="32" height="32" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <filter id="filter0_d" x="42" y="0" width="32" height="32" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix"/>
             <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
             <feOffset dy="2"/>
             <feGaussianBlur stdDeviation="5"/>
@@ -83,9 +83,9 @@ class SmallCard extends Component  {
         </div>
 
         <div className="card-footer">
-        <a href="#">Daily</a>
-        <a href="#">Monthly</a>
-         <a href="#">Yearly</a>
+        <button className="btn" href="#">Daily</button>
+        <button className="btn" href="#">Monthly</button>
+         <button className="btn" href="#">Yearly</button>
         </div>
       </div>
     )
